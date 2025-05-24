@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <style>
+  html.lenis {
+    height: auto;
+  }
+  .lenis.lenis-smooth {
+    scroll-behavior: auto;
+  }
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+</style>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Havblink Hvidvin – Forside</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="logo-wrapper">
+    <img class="logo" src="images/logo.png" alt="Havblink logo" />
+    <span class="logo-text">HAVBLINK HVIDVIN</span>
+  </a>
+
+  <input type="checkbox" id="menu-toggle" />
+  <label for="menu-toggle" class="burger">&#9776;</label>
+
+  <nav>
+    <a href="vores-vine.html">Vores vine</a>
+    <a href="om-os.html">Om os</a>
+    <a href="solaris.html">Solaris</a>
+    <!-- Nyt link, kun til mobil -->
+    <a href="shop.html" class="shop-mobile">Shop</a>
+  </nav>
+
+  <!-- Original desktop-knap -->
+  <a href="shop.html" class="btn-shop">Shop</a>
+</header>
+
+
+<section id="hero">
+  <div class="hero-content">
+    <h1>Oplev den ægte smag af dansk vin</h1>
+    <p>Velkommen til Havblink Hvidvin, hvor vi tilbyder en unik samling af håndplukkede hvidvine.</p>
+    <div class="hero-cta">
+      <a href="vores-vine.html" class="btn-secondary hero-btn">Vores vine</a>
+    </div>
+  </div>
+</section>
+
+<section id="quality">
+  <div class="container">
+    <div class="quality-text">
+    <small>Kvalitet</small>
+    <h2>Oplev vores unikke udvalg af hvidvine</h2>
+    <p>
+      Vores hvidvine er omhyggeligt udvalgt for at sikre enestående smagsoplevelser.
+      Hver flaske repræsenterer den bedste kvalitet fra vores vingård.
+    </p>
+    <ul>
+      <li>Naturlige ingredienser for en ren smagsoplevelse.</li>
+      <li>Perfekte til enhver lejlighed og madparring.</li>
+      <li>Oplev smagen af vores Solaris-druer.</li>
+    </ul>
+    <div class="quality-buttons">
+      <a href="vores-vine.html" class="btn-primary">Se vores vine</a>
+    </div>
+  </div>
+  <div class="quality-image">
+    <img src="images/quality.jpg" alt="Solaris-druer">
+  </div>
+ </div> 
+</section>
+<section id="testimonials">
+  <div class="testimonials-heading">
+    <h2>Kundeudtalelser</h2>
+    <p>Se hvad vores kunder siger om vores produkter</p>
+  </div>
+  <div class="testimonial-cards">
+    <div class="testimonial">
+      <p><strong>"Havblink Hvidvin har forvandlet vores middage til noget særligt. Deres hvidvine er uovertrufne! Og deres anbefalinger passer perfekt."</strong></p>
+      <div class="author">
+        <strong>Louise Hansen</strong><br>
+        Vinelsker, Privat
+      </div>
+    </div>
+    <div class="testimonial">
+      <p><strong>"En smagsoplevelse uden lige! Jeg anbefaler varmt Havblink til alle."</strong></p>
+      <div class="author">
+        <strong>Mikkel Schandorff</strong><br>
+        Restaurantchef, Bindingsværket
+      </div>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="footer-top">
+    <img src="images/logo.png" alt="Havblink logo" class="footer-logo">
+    
+    <div class="footer-nav">
+      <a href="vores-vine.html">Vores vine</a>
+      <a href="solaris.html">Solaris</a>
+      <a href="om-os.html">Om os</a>
+      <a href="kontakt.html">Kontakt</a>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="footer-bottom">
+    <p>© 2025 Havblink Hvidvin. Alle rettigheder forbeholdes.</p>
+    <div class="footer-links">
+      <a href="#">Privatlivspolitik</a>
+      <a href="#">Brugsvilkår</a>
+      <a href="#">Cookieindstillinger</a>
+    </div>
+  </div>
+</footer>
+
+
+<!-- Lenis smooth scroll -->
+<script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.23/bundled/lenis.min.js"></script>
+<script>
+  const lenis = new Lenis({
+    lerp: 0.1,
+    wheelMultiplier: 0.7,
+    gestureOrientation: "vertical",
+    normalizeWheel: false,
+    smoothTouch: false
+  });
+
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+
+  requestAnimationFrame(raf);
+</script>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('show');
+        }, index * 500); // 400ms forsinkelse per element
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+
+  document.querySelectorAll('p, li').forEach(el => observer.observe(el));
+</script>
+
+  </body>
+</html>

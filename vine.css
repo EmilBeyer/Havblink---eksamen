@@ -1,0 +1,192 @@
+/* === OVERBLIK & HEADING === */
+.wine-overview {
+  padding-top: 7rem;
+}
+
+.wine-heading {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.wine-heading h1 {
+  font-family: 'PP Pangaia', serif;
+  font-weight: 100;
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.wine-heading p {
+  max-width: 700px;
+  margin: 0 auto;
+  color: #2A1A1F;
+}
+
+/* === WINE GRID === */
+.wine-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 3rem;
+  padding: 2rem 5%;
+  margin-bottom: 5rem;
+}
+
+.wine-card {
+  text-align: center;
+}
+
+.wine-card {
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s ease;
+}
+.wine-card:hover {
+  transform: translateY(-5px);
+}
+
+.wine-card img {
+  width: 100%;
+  border-radius: 0.25rem;
+}
+
+.wine-card h3 {
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+.wine-card p {
+  margin: 0.5rem 0 1rem;
+  font-size: 0.9rem;
+  color: #2A1A1F;
+}
+
+.wine-card a {
+  text-decoration: none;
+  font-weight: 500;
+  color: #2A1A1F;
+}
+
+/* === VINE SECTIONS === */
+.vine-section {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  background: #FFFEF9;
+  padding: 0 5%;
+}
+
+.vine-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4rem;
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.vine-buttons a {
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+.vine-buttons a:hover {
+  background-color: #515739;
+  color: #FFFEF9;
+  border-color: #515739;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+
+/* Kun på desktop – vend rækkefølgen for .reverse */
+@media (min-width: 769px) {
+  .vine-section.reverse .vine-container {
+    flex-direction: row-reverse;
+  }
+}
+
+.vine-text {
+  flex: 1;
+}
+
+.vine-text h2 {
+  font-family: 'PP Pangaia', serif;
+  font-weight: 100;
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.vine-label {
+  background: #515739;
+  color: #fff;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.85rem;
+  font-weight: bold;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.vine-text p {
+  font-size: 1rem;
+  color: #2A1A1F;
+  margin-bottom: 2rem;
+  max-width: 90%;
+}
+
+.vine-buttons a {
+  margin-right: 1rem;
+  text-decoration: none;
+  padding: 0.75rem 1.25rem;
+  font-weight: 500;
+  border: 1px solid #2A1A1F;
+  color: #2A1A1F;
+}
+
+.vine-image {
+  flex: 1;
+}
+
+.vine-image img {
+  width: 100%;
+  border-radius: 0.25rem;
+}
+
+/* === MOBILVISNING === */
+@media (max-width: 768px) {
+  .vine-section {
+    height: auto;
+    padding: 4rem 1.5rem;
+  }
+
+  .vine-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .vine-text,
+  .vine-image {
+    width: 100%;
+  }
+
+  .vine-text h2 {
+    font-size: 2rem;
+  }
+
+  .vine-text p {
+    font-size: 0.85rem;
+  }
+
+  .vine-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .vine-buttons a {
+    margin: 0;
+    width: fit-content;
+  }
+}

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <style>
+  html.lenis {
+    height: auto;
+  }
+  .lenis.lenis-smooth {
+    scroll-behavior: auto;
+  }
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+</style>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vores vine</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="vine.css" />
+  <link rel="stylesheet" href="solaris.css" />
+</head>
+<body>
+<header>
+  <a href="index.html" class="logo-wrapper">
+    <img class="logo" src="images/logo.png" alt="Havblink logo" />
+    <span class="logo-text">HAVBLINK HVIDVIN</span>
+  </a>
+
+  <input type="checkbox" id="menu-toggle" />
+  <label for="menu-toggle" class="burger">&#9776;</label>
+
+  <nav>
+    <a href="vores-vine.html">Vores vine</a>
+    <a href="om-os.html">Om os</a>
+    <a href="solaris.html">Solaris</a>
+    <!-- Dette link vises kun på mobil i burger-menuen -->
+    <a href="shop.html" class="shop-mobile">Shop</a>
+  </nav>
+
+  <!-- Denne knap vises kun på desktop til højre -->
+  <a href="shop.html" class="btn-shop">Shop</a>
+</header>
+
+  
+<section id="solaris-hero">
+  <div class="hero-content">
+    <h1>OPLEV SOLARIS-DRUENS UNIKKE KARAKTER</h1>
+    <p>En druesort, der trives i det danske klima og leverer elegante og friske hvidvine med karakter.</p>
+    <div class="hero-cta">
+      <a href="vores-vine.html" class="btn-secondary hero-btn">Se vores vine</a>
+    </div>
+  </div>
+</section>
+
+<section id="om-solaris">
+  <div class="solaris-container">
+    <div class="solaris-text">
+      <h2>Hvorfor valgte vi Solaris?</h2>
+      <p>Solaris-druen er kendt for sin imponerende modstandsdygtighed over for sygdomme. Dette gør den ideel til dyrkning i det danske klima.</p>
+      <div class="solaris-facts">
+        <div>
+          <strong>Sund og stærk</strong>
+          <p>Solaris-druen giver en ren og frugtagtig smag.</p>
+        </div>
+        <div>
+          <strong>Perfekt til</strong>
+          <p>hvidvine, der imponerer med deres friskhed.</p>
+        </div>
+      </div>
+    </div>
+    <div class="solaris-image">
+      <img src="images/om solaris.jpg" alt="Solaris drue i marken" />
+    </div>
+  </div>
+</section>
+
+
+
+  
+  </main>
+
+  <footer>
+    <div class="footer-top">
+      <a href="index.html">
+        <img src="images/logo.png" alt="Havblink logo" class="footer-logo" />
+      </a>
+      <div class="footer-nav">
+        <a href="vores-vine.html">Vores vine</a>
+        <a href="solaris.html">Solaris</a>
+        <a href="om-os.html">Om os</a>
+        <a href="kontakt.html">Kontakt</a>
+      </div>
+    </div>
+    <hr />
+    <div class="footer-bottom">
+      <p>&copy; 2025 Havblink Hvidvin. Alle rettigheder forbeholdes.</p>
+      <div class="footer-links">
+        <a href="#">Privatlivspolitik</a>
+        <a href="#">Brugsvilkår</a>
+        <a href="#">Cookieindstillinger</a>
+      </div>
+    </div>
+  </footer>
+
+<!-- Lenis smooth scroll -->
+<script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.23/bundled/lenis.min.js"></script>
+<script>
+  const lenis = new Lenis({
+    lerp: 0.1,
+    wheelMultiplier: 0.7,
+    gestureOrientation: "vertical",
+    normalizeWheel: false,
+    smoothTouch: false
+  });
+
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+
+  requestAnimationFrame(raf);
+</script>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('show');
+        }, index * 500); // 500ms forsinkelse per element
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+
+  document.querySelectorAll('p, li').forEach(el => observer.observe(el));
+</script>
+
+
+</body>
+</html>

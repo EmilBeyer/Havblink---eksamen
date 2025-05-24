@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <style>
+  html.lenis {
+    height: auto;
+  }
+  .lenis.lenis-smooth {
+    scroll-behavior: auto;
+  }
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+</style>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vores vine</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="vine.css" />
+</head>
+<body>
+<header>
+  <a href="index.html" class="logo-wrapper">
+    <img class="logo" src="images/logo.png" alt="Havblink logo" />
+    <span class="logo-text">HAVBLINK HVIDVIN</span>
+  </a>
+
+  <input type="checkbox" id="menu-toggle" />
+  <label for="menu-toggle" class="burger">&#9776;</label>
+
+  <nav>
+    <a href="vores-vine.html">Vores vine</a>
+    <a href="om-os.html">Om os</a>
+    <a href="solaris.html">Solaris</a>
+    <!-- Dette link vises kun på mobil i burger-menuen -->
+    <a href="shop.html" class="shop-mobile">Shop</a>
+  </nav>
+
+  <!-- Denne knap vises kun på desktop til højre -->
+  <a href="shop.html" class="btn-shop">Shop</a>
+</header>
+
+
+  <main>
+    <section class="wine-overview">
+      <div class="wine-heading">
+        <h1>Vores vine</h1>
+        <p>Oplev nedenfor vores sortiment af nøje udvalgte hvidvine, klik på billederne nedenunder og vælg hvilken mad eller arrangement du skal parre din vin med, for at få den bedste oplevelse.</p>
+      </div>
+
+      <div class="wine-grid">
+  <a href="#skalddyr" class="wine-card">
+    <img src="images/skaldyr.jpg" alt="Skaldyr" />
+    <h3>Skaldyr</h3>
+    <p>Friskhed møder finesse. Vores vine til skaldyr løfter smagen af alt fra blåmuslinger til jomfruhummer med sprød syre og elegante citrusnoter.</p>
+  </a>
+  <a href="#fisk" class="wine-card">
+    <img src="images/fisk.jpg" alt="Fisk" />
+    <h3>Fisk</h3>
+    <p>Delikate og rene vine, der komplementerer fiskens naturlige smag – uanset om det er letstegt torsk, røget makrel eller ceviche.</p>
+  </a>
+  <a href="#koed" class="wine-card">
+    <img src="images/rødt kød.jpg" alt="koed" />
+    <h3>Rødt kød</h3>
+    <p>En anderledes oplevelse: fyldige hvidvine med karakter og dybde, der matcher det intense i rødt kød og grillet mad på forbløffende vis.</p>
+  </a>
+  <a href="#social" class="wine-card">
+    <img src="images/sociale events.jpg" alt="Sociale events" />
+    <h3>Sociale events</h3>
+    <p>Festlige og boblende vine, skabt til samvær, småretter og skål i godt selskab. Perfekt som velkomst, til tapas eller bare til hygge.</p>
+  </a>
+</div>
+
+    </section>
+
+    <!-- Sektion 1: billede til højre -->
+    <section class="vine-section" id="social">
+      <div class="vine-container">
+        <div class="vine-text">
+          <span class="vine-label">Sociale events</span>
+          <h2>Solblink - perfekt til den sociale</h2>
+          <p>En boblende hvidvin med strejf af citrus og blomster, der løfter stemningen og bringer folk sammen. Perfekt til velkomstskålen, småretter og snakke i sommeraftenens gyldne lys.</p>
+          <div class="vine-buttons">
+            <a href="#" class="btn-primary">Køb nu</a>
+          </div>
+        </div>
+        <div class="vine-image">
+          <img src="images/solblink.jpg" alt="Solblink vin" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Sektion 2: billede til venstre -->
+    <section class="vine-section" id="skalddyr">
+      <div class="vine-container">
+        <div class="vine-image">
+          <img src="images/aften-i-øst.jpg" alt="Aften i øst vin" />
+        </div>
+        <div class="vine-text">
+          <span class="vine-label">Skaldyr</span>
+          <h2>Aften i øst - skalddyrs bedste ven</h2>
+          <p>Elegant og ren vin med diskrete noter af grønne æbler og saltet mineralitet. Udviklet til at fremhæve det bedste i delikate skaldyr og lange middage med havudsigt i blikket.</p>
+          <div class="vine-buttons">
+            <a href="#" class="btn-primary">Køb nu</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sektion 3: billede til højre -->
+    <section class="vine-section" id="fisk">
+      <div class="vine-container">
+        <div class="vine-text">
+          <span class="vine-label">Fisk</span>
+          <h2>Nordlys - Fiskens bedste ven</h2>
+          <p>Frisk og sprød med fine urtenoter og et strejf af citrus og limeblade. Nordlys er en vin, der lader den rene smag af fisk komme til sin ret – fra stegt torsk til ceviche.</p>
+          <div class="vine-buttons">
+            <a href="#" class="btn-primary">Køb nu</a>
+          </div>
+        </div>
+        <div class="vine-image">
+          <img src="images/nordlys.png" alt="Nordlys vin" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Sektion 4: billede til venstre -->
+    <section class="vine-section" id="koed">
+      <div class="vine-container">
+        <div class="vine-image">
+          <img src="images/skovbrise.jpg" alt="Skovbrise vin" />
+        </div>
+        <div class="vine-text">
+          <span class="vine-label">Rødt kød</span>
+          <h2>Skovbrise - En usædvanlig partner til rødt kød</h2>
+          <p>En fyldigere og fadlagret hvidvin med toner af nødder, bagte æbler og en let røget kant. Skovbrise er et overraskende match til rødt kød og grillet mad – perfekt til madmodige og lune aftener.</p>
+          <div class="vine-buttons">
+            <a href="#" class="btn-primary">Køb nu</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-top">
+      <a href="index.html">
+        <img src="images/logo.png" alt="Havblink logo" class="footer-logo" />
+      </a>
+      <div class="footer-nav">
+        <a href="vores-vine.html">Vores vine</a>
+        <a href="solaris.html">Solaris</a>
+        <a href="om-os.html">Om os</a>
+        <a href="kontakt.html">Kontakt</a>
+      </div>
+    </div>
+    <hr />
+    <div class="footer-bottom">
+      <p>&copy; 2025 Havblink Hvidvin. Alle rettigheder forbeholdes.</p>
+      <div class="footer-links">
+        <a href="#">Privatlivspolitik</a>
+        <a href="#">Brugsvilkår</a>
+        <a href="#">Cookieindstillinger</a>
+      </div>
+    </div>
+  </footer>
+
+<!-- Lenis smooth scroll -->
+<script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.23/bundled/lenis.min.js"></script>
+<script>
+  const lenis = new Lenis({
+    lerp: 0.1,
+    wheelMultiplier: 0.7,
+    gestureOrientation: "vertical",
+    normalizeWheel: false,
+    smoothTouch: false
+  });
+
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+
+  requestAnimationFrame(raf);
+</script>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('show');
+        }, index * 500); // 500ms forsinkelse per element
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+
+  document.querySelectorAll('p, li').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
