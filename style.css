@@ -22,6 +22,9 @@ p.show, li.show {
   font-display: swap;
 }
 
+h1, h2, h3 {
+  font-family: 'PP Pangaia', serif;
+}
 * {
   margin: 0;
   box-sizing: border-box;
