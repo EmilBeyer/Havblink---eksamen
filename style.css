@@ -15,9 +15,11 @@ p.show, li.show {
 
 @font-face {
   font-family: 'PP Pangaia';
-  src: url('fonts/PPPangaia-Regular.woff2') format('woff2'); /* opdater path hvis nødvendigt */
+  src: url('fonts/PPPangaia-Regular.woff2') format('woff2'),
+       url('fonts/PPPangaia-Regular.woff') format('woff');
   font-weight: 100;
   font-style: normal;
+  font-display: swap;
 }
 
 * {
